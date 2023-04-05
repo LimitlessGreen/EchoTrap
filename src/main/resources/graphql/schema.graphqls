@@ -1,0 +1,63 @@
+type Query {
+    #allBooks: [Book]
+    #findOne(id: ID!): Book
+    allUsers: [User]
+}
+
+
+
+type Rating {
+    rating: String
+    star: String
+}
+
+type User {
+    id: ID!
+    firstName: String
+    lastName: String
+    fullName: String
+    age: Int
+    nationality: String
+}
+
+# --------
+
+type SdCard {
+    id: ID!
+    name: String
+}
+
+
+type Comment {
+    id: ID!
+    time: String
+    author: User
+    content: String
+}
+
+type Location {
+    id: ID!
+    location: String
+}
+
+type Recorder {
+    id: ID!
+    name: String
+    currentSdCard: SdCard
+    owner: User
+    firmware: String
+    comment: [Comment]
+}
+
+type Recording {
+    id: ID!
+    startTime: String
+    endTime: String
+    comment: [Comment]
+    user: User
+
+}
+
+type RecordingCycle {
+    id: ID!
+}
